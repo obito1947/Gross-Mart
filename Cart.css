@@ -1,0 +1,401 @@
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    
+}
+
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .cart-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .summary-bar {
+    display: flex;
+    width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(to right, rgb(189, 188, 188), #9b9a9a , black);
+    color: rgb(5, 5, 5);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .summary-left {
+    text-align: left;
+  }
+  
+  .summary-left p {
+    margin: 5px 0;
+  }
+  
+  .savings {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .summary-right .checkout-btn {
+    padding: 10px 20px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .summary-right .checkout-btn:hover {
+    background-color: darkred;
+  }
+  
+  .cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-image {
+    max-width: 100px;
+    border-radius: 8px;
+  }
+  
+  .product-details {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  
+  .product-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .product-price,
+  .selling-price {
+    font-size: 16px;
+    color: #888;
+  }
+  
+  .selling-price span {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-input {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    border-radius: 4px;
+  }
+  
+  .decrease-btn,
+  .increase-btn {
+    padding: 5px 10px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .decrease-btn:hover,
+  .increase-btn:hover {
+    background-color: #ddd;
+  }
+  
+  .total-price {
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+
+
+/* Address Container */
+
+.saved-addresses {
+    margin-bottom: 20px;
+    width: 120%; /* Adjust this width to control the container size */
+}
+
+
+.address-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px; /* Increased padding */
+    margin-bottom: 15px; /* Increased margin */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px; /* Increased gap */
+    cursor: pointer;
+    width: 100%; /* Ensure full width */
+}
+
+
+.radio-btn {
+    margin-right: 10px;
+}
+
+.address-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.add-new-address-text {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #2874f0;
+    font-weight: bold;
+    font-size: 22px; /* Slightly larger font size */
+}
+
+.add-new-address {
+    background-color: #fff;
+    padding: 25px; /* Increased padding */
+    border-radius: 8px;
+    margin-left: -200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 1000%; /* Ensure full width */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.save-btn {
+    background-color: #fb641b;
+    color: #fff;
+    border: none;
+    padding: 12px 25px; /* Increased padding */
+    font-size: 18px; /* Slightly larger font size */
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Ensure full width */
+}
+
+.save-btn:hover {
+    background-color: #28a745;
+}
+.go-back-btn {
+    background-color: #2874f0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 15px;
+    width: 100%; /* Increase width to full width */
+}
+
+
+.go-back-btn:hover {
+    background-color: #0056b3;
+}
+
+.go-back-btn:focus {
+    outline: none;
+}
+
+
+/* payment styles */
+
+.payment-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.payment-container h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.payment-container p {
+    margin-bottom: 20px;
+    color: #7A7A7A;
+    font-size: 14px;
+}
+
+.payment-methods {
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    justify-content: space-between;
+}
+
+.payment-option:hover {
+    border-color: #4D90FE;
+}
+
+.payment-option img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-option input[type="radio"]:checked + img {
+    outline: 2px solid #4D90FE;
+    padding: 2px;
+}
+
+.continue-btn, .back-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.continue-btn {
+    background-color: #fb641b;
+    color: white;
+}
+
+.continue-btn:hover{
+    background-color: green;
+    color: white;
+}
+
+.back-btn {
+    background-color: #F4F4F4;
+    color: #6C63FF;
+}
+/* Confirmationn container styles */
+/* Styles to center the confirmation content */
+/* Confirmation Container Styles */
+.confirmation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Fixes the content in the center of the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(182, 181, 181, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.confirmation-content {
+    background-color: #fff;
+    padding: 30px;
+    margin-left: 35%;
+    margin-top: 10%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+}
+
+.confirmation-icon {
+    font-size: 50px;
+    color: #28a745; /* Green color for the checkmark */
+    margin-bottom: 20px;
+}
+
+.confirmation-content h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+.confirmation-content p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+#go-home-btn {
+    background-color: #fb641b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#go-home-btn:hover {
+    background-color: #28a745;
+}

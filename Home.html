@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" >
+    <link rel="icon" href="https://raw.githubusercontent.com/obito1947/Food-delivery-/main/images/grocsmart_logo-removebg-preview.webp" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="Home.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="row1">
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/obito1947/Food-delivery-/main/images/grocsmart_logo-removebg-preview.webp" alt="GrocsMart Logo" class="shadow-image">
+                <h1>GrocsMart</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search products...">
+            </div>
+
+            <div class="cart-icon" id="cart-icon">
+                <a href="Cart.html" style="text-decoration: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="white" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                      </svg>
+                </a>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+        <div class="row2 hitems">
+            <div class="search-con">
+                <div class="shop-by-category">
+                    <button id="categoryBtn" class="category-btn">
+                        Shop by Category <span id="arrow" class="arrow-down">▼</span>
+                    </button>
+                    <div id="dropdownMenu" class="dropdown">
+                        <div class="left-panel">
+                                <div class="category-option" data-category="electronics">Electronics</div>
+                                <div class="category-option" data-category="vegetables">Vegetables</div>
+                                <div class="category-option" data-category="grocery">Grocery</div>
+                                <div class="category-option" data-category="fruits">Fruits</div>
+                                <div class="category-option" data-category="beauty">Beauty</div>
+                                <div class="category-option" data-category="foodgrains">Foodgrains</div>
+                                <div class="category-option" data-category="masala">Masala</div>
+                                <div class="category-option" data-category="oils">Oils</div>
+                                <div class="category-option" data-category="eggs">Eggs & Meat</div>
+                                <div class="category-option" data-category="snacks">Snacks</div>
+                                <div class="category-option" data-category="beverages">Beverages</div>
+                            </div>
+                        <div class="right-panel">
+                            <div class="category-content" id="electronics">
+                                <ul>
+                                    <li class="right-option">TV</li>
+                                    <li class="right-option">Mobile</li>
+                                    <li class="right-option">Fridge</li>
+                                </ul>
+                            </div>
+                            <div class="category-content" id="vegetables">
+                                <ul>
+                                    <li class="right-option">Carrot</li>
+                                    <li class="right-option">Tomato</li>
+                                    <li class="right-option">Onion</li>
+                                    <li class="right-option">Broccoli</li>
+                                    <li class="right-option">Spinach</li>
+                                </ul>
+                            </div>
+                            <div class="category-content" id="grocery">
+                                <ul>
+                                    <li class="right-option">Rice</li>
+                                    <li class="right-option">Wheat</li>
+                                    <li class="right-option">Oil</li>
+                                </ul>
+                            </div>
+                            <div class="category-content" id="fruits">
+                                <ul>
+                                    <li class="right-option">Apple</li>
+                                    <li class="right-option">Banana</li>
+                                    <li class="right-option">Orange</li>
+                                </ul>
+                            </div>
+                            <div class="category-content" id="beauty">
+                                <ul>
+                                    <li class="right-option">Face Cream</li>
+                                    <li class="right-option">Shampoo</li>
+                                    <li class="right-option">Makeup Kit</li>
+                                </ul>
+                            </div>
+                            <div class="category-content" id="foodgrains">
+                                <ul>
+                                    <li class="right-option">Lentils</li>
+                                    <li class="right-option">Rice</li>
+                                    <li class="right-option">Wheat</li>
+                                </ul>
+                            </div>
+                            <div class="category-content" id="masala">
+                                <ul>
+                                    <li class="right-option">Garam Masala</li>
+                                    <li class="right-option">Turmeric Powder</li>
+                                    <li class="right-option">Cumin Seeds</li>
+                                </ul>
+                            </div>
+                            <div class="category-content" id="oils">
+                                <ul>
+                                    <li class="right-option">Olive Oil</li>
+                                    <li class="right-option">Mustard Oil</li>
+                                    <li class="right-option">Coconut Oil</li>
+                                </ul>
+                            </div>
+                            <div class="category-content" id="eggs">
+                                <ul>
+                                    <li class="right-option">Eggs</li>
+                                    <li class="right-option">Fish & Seafood</li>
+                                    <li class="right-option">Mutton</li>
+                                    <li class="right-option">Poultry</li>
+                                </ul>
+                            </div>
+                            <div class="category-content" id="snacks">
+                                <ul>
+                                    <li class="right-option">Chips</li>
+                                    <li class="right-option">Biscuits</li>
+                                    <li class="right-option">Chocolates</li>
+                                </ul>
+                            </div>
+                            <div class="category-content" id="beverages">
+                                <ul>
+                                    <li class="right-option">Tea</li>
+                                    <li class="right-option">Coffee</li>
+                                    <li class="right-option">Juices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <a href="#" class="btn btn-warning btn-s" >Exotic fruits &veg..
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+                      </svg>
+                </a> 
+                <a href="#" class="btn btn-warning btn-s" >Tea
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+                      </svg>
+                </a>
+                <a href="#" class="btn btn-warning btn-s" >Ghee
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+                      </svg>
+                </a>
+                <a href="#" class="btn btn-warning btn-s" >Fresh Vegetables
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+                      </svg>
+                </a>
+                <a href="#" class="btn btn-warning btn-s" >Beauty Prod..</a>
+            </div>
+        </div>
+    </header>
+      <div id="carouselExampleCaptions" class="carousel sliden carousel-fade" data-bs-ride="carousel" style="margin-left: 0px; margin-top: 0;" >
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="https://www.bigbasket.com/media/uploads/banner_images/b2c081912730-24801_b2c_hp_hnc_cm_lipton_460_060924_all.jpg?tr=w-1920,q=80" class="d-block w-100 h-50 " alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://www.bigbasket.com/media/uploads/banner_images/b2c081912730-24800_b2c_hp_dnc_cm_domex_460_250824_all.jpg?tr=w-1920,q=80" class="d-block w-100" alt="...">  
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://www.bigbasket.com/media/uploads/banner_images/b2c081912730-24799_b2c_hp_dnc_cm_surf-excel_460_010924_all.jpg?tr=w-1920,q=80" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <div class="main-content">
+        <div class="carousel-container">
+            <h2>Best Sellers</h2>
+            <div class="carousel" id="carousel1">
+                <!-- Product Cards -->
+                <div class="product-card">
+                    <div class="offer-tag">10% OFF</div>
+                    <img src="https://i.pinimg.com/236x/f7/b5/fb/f7b5fb67933eff11f5f1346efd6e1559.jpg" alt="Grocery Image">
+                    <div class="product-info">
+                        <div class="brand">Tata</div>
+                        <div class="product-name">Organic Rice</div>
+                        <div class="product-description">High-quality organic rice, great for daily consumption.</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="1 kg Pouch - ₹100">1 kg Pouch - ₹100</option>
+                           <option value="2 kg Bag - ₹180">2 kg Bag - ₹180</option>
+                           <option value="5 kg Bag - ₹400">5 kg Bag - ₹400</option>
+                        </select>
+                
+                        <div class="price">
+                            <span class="mrp-price">₹120</span>
+                            ₹100
+                        </div>
+        
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        
+                    </div>
+                </div>
+                <!-- Repeat for other products -->
+                 <!-- Repeat for other products -->
+                <div class="product-card">
+                    <div class="offer-tag">5% OFF</div>
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQLtywNzgnxQ9_praf1VuVP-zsmmp5v3HiveLBixjRv0Kp5Sdy3KS-6E-ltnfN_bTGv6qOK1n0Tcva25fyodwOa0_fBzr5KTJBpTGNOaQwrTRzfPEMV_Fo7_w" alt="Moong Dal">
+                    <div class="product-info">
+                        <div class="brand">Tata</div>
+                        <div class="product-name">Moong Dal</div>
+                        <div class="product-description">High-quality organic rice, great for daily consumption.</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="1 kg Pouch - ₹100">1 kg Pouch - ₹100</option>
+                           <option value="2 kg Bag - ₹180">2 kg Bag - ₹180</option>
+                           <option value="5 kg Bag - ₹400">5 kg Bag - ₹400</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹80</span>
+                            ₹75
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        
+                    </div>
+                </div>
+                 <!-- Red Gram -->
+                 <div class="product-card">
+                    <div class="offer-tag">20% OFF</div>
+                    <img src="https://m.media-amazon.com/images/I/81VIi38z2xL._AC_UF1000,1000_QL80_.jpg" alt="Red Gram">
+                    <div class="product-info">
+                        <div class="brand">Tata</div>
+                        <div class="product-name">Red Gram</div>
+                        <div class="product-description">Healthy red gram pulses which contains rich protien .</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="1 kg Pouch - ₹100">1 kg Pouch - ₹100</option>
+                           <option value="2 kg Bag - ₹180">2 kg Bag - ₹180</option>
+                           <option value="5 kg Bag - ₹400">5 kg Bag - ₹400</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹160</span>
+                            ₹130
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        
+                    </div>
+                </div>
+                <!-- Brown Rice -->
+                <div class="product-card">
+                    <div class="offer-tag">12% OFF</div>
+                    <img src="https://m.media-amazon.com/images/I/61pBqRtsNGS._AC_UF894,1000_QL80_.jpg" alt="Brown Rice">
+                    <div class="product-info">
+                        <div class="brand">Tata</div>
+                        <div class="product-name">Brown Rice</div>
+                        <div class="product-description">Whole grain brown rice for healthy meals which contains rich fibre.</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="1 kg Pouch - ₹100">1 kg Pouch - ₹100</option>
+                           <option value="2 kg Bag - ₹180">2 kg Bag - ₹180</option>
+                           <option value="5 kg Bag - ₹400">5 kg Bag - ₹400</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹150</span>
+                            ₹132
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        
+                    </div>
+                </div>
+                <!-- Dal -->
+                <div class="product-card">
+                    <div class="offer-tag">8% OFF</div>
+                    <img src="https://www.tatanutrikorner.com/cdn/shop/products/Tata-Sampann-Toor-Dal-1kg-_FOP_-with-Sanjeev-kapoor.png?v=1660201674" alt="Dal">
+                    <div class="product-info">
+                        <div class="brand">Tata</div>
+                        <div class="product-name">Dal</div>
+                        <div class="product-description">Essential everyday pulses consists good proteins and minerals.</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="1 kg Pouch - ₹100">1 kg Pouch - ₹100</option>
+                           <option value="2 kg Bag - ₹180">2 kg Bag - ₹180</option>
+                           <option value="5 kg Bag - ₹400">5 kg Bag - ₹400</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹130</span>
+                            ₹120
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+                    </div>
+                </div>
+                <!--Black gram-->
+                <div class="product-card">
+                    <div class="offer-tag">10% OFF</div>
+                    <img src="https://www.tenalidoublehorse.com/cdn/shop/files/PremiumBlackGram1kg-TenaliDoubleHorseFoodsPrivateLimited1.png?v=1724413677" alt="Dal">
+                    <div class="product-info">
+                        <div class="brand">Tata</div>
+                        <div class="product-name">Black Gram</div>
+                        <div class="product-description">Essential everyday pulses consists good proteins, fibre minerals .</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="1 kg Pouch - ₹100">1 kg Pouch - ₹100</option>
+                           <option value="2 kg Bag - ₹180">2 kg Bag - ₹180</option>
+                           <option value="5 kg Bag - ₹400">5 kg Bag - ₹400</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹150</span>
+                            ₹110
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+                    </div>
+                </div>
+                 <!--Toor Dal-->
+                 <div class="product-card">
+                    <div class="offer-tag">12% OFF</div>
+                    <img src="https://m.media-amazon.com/images/I/81Zeujhzd0L.jpg" alt="Dal">
+                    <div class="product-info">
+                        <div class="brand">Tata</div>
+                        <div class="product-name">Toor Dal</div>
+                        <div class="product-description">Essential everyday pulses consists good proteins, fibre minerals .</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="1 kg Pouch - ₹100">1 kg Pouch - ₹100</option>
+                           <option value="2 kg Bag - ₹180">2 kg Bag - ₹180</option>
+                           <option value="5 kg Bag - ₹400">5 kg Bag - ₹400</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹170</span>
+                            ₹150
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+                    </div>
+                </div>
+                <!--Milllets-->
+                <div class="product-card">
+                    <div class="offer-tag">12% OFF</div>
+                    <img src="https://www.sirimillet.org.in/wp-content/uploads/2022/03/foxtail-millet-grainone.webp" alt="Dal">
+                    <div class="product-info">
+                        <div class="brand">Tata</div>
+                        <div class="product-name">Millets</div>
+                        <div class="product-description">Essential everyday pulses consists good proteins, fibre minerals .</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="1 kg Pouch - ₹100">1 kg Pouch - ₹100</option>
+                           <option value="2 kg Bag - ₹180">2 kg Bag - ₹180</option>
+                           <option value="5 kg Bag - ₹400">5 kg Bag - ₹400</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹190</span>
+                            ₹160
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+                    </div>
+                </div>
+                <!-- More product cards here -->
+            </div>
+            <!--Cart options-->
+            <div class="cart-popup" id="cartPopup">
+                <span class="close" onclick="closePopup()">×</span>
+                <div class="cart-content">
+                    <p id="cartCount">
+                        <span id="cartCountNumber">1 item</span>&ensp;in your Basket
+                    </p>
+                    <a class="view-cart-link" href="Cart.html" id="view-basket">View Basket 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="white" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                          </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <button class="nav-btn prev-btn" id="prev-btn1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+              </svg></button>
+            <button class="nav-btn next-btn" id="next-btn1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                  </svg>
+            </button>
+        </div>
+        <p><br></p>
+        <div class="carousel-container2">
+            <h2>My Smart Basket</h2>
+            <div class="carousel2" id="carousel2">
+                <!-- Product Cards -->
+                <div class="product-card">
+                    <div class="offer-tag">10% OFF</div>
+                    <img src="https://www.bigbasket.com/media/uploads/p/l/40136606_5-pampers-diaper-pants-new-born.jpg" alt="Grocery Image">
+                    <div class="product-info">
+                        <div class="brand">Pampers</div>
+                        <div class="product-name">Pampers Diapers</div>
+                        <div class="product-description">High-quality diapers for children from age 1-6 years.</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="10 packs Pouch - ₹90">10 packs Pouch - ₹90</option>
+                           <option value="15 packs Pouch - ₹140">15 packs Pouch - ₹140</option>
+                           <option value="20 packs Pouch - ₹190">20 packs Pouch - ₹190</option>
+                        </select>
+                
+                        <div class="price">
+                            <span class="mrp-price">₹110</span>
+                            ₹90
+                        </div>
+        
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        
+                    </div>
+                </div>
+                <!-- Repeat for other products -->
+                 <!-- Repeat for other products -->
+                <div class="product-card">
+                    <div class="offer-tag">5% OFF</div>
+                    <img src="https://m.media-amazon.com/images/I/61YuuVX-tcL.jpg" alt="Huggies">
+                    <div class="product-info">
+                        <div class="brand">Huggies</div>
+                        <div class="product-name">Diapers</div>
+                        <div class="product-description">High-quality diapers for children from age 1-6 years.</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="10 packs Pouch - ₹100">10 packs Pouch - ₹100</option>
+                           <option value="15 packs Pouch - ₹140">15 packs Pouch - ₹140</option>
+                           <option value="20 packs Pouch - ₹190">20 packs Pouch - ₹190</option>
+                        </select>
+                
+                        <div class="price">
+                            <span class="mrp-price">₹110</span>
+                            ₹100
+                        </div>
+
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        
+                    </div>
+                </div>
+                 <!-- Baby Wipers -->
+                 <div class="product-card">
+                    <div class="offer-tag">20% OFF</div>
+                    <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/wipe/e/2/s/baby-wipes-80-sheets-pack-of-3-with-lid-240-8906006350090-novel-original-imagzgqybgk8hdmk.jpeg?q=90&crop=false" alt="Baby Wipers">
+                    <div class="product-info">
+                        <div class="brand">Novel</div>
+                        <div class="product-name">Baby Wipers</div>
+                        <div class="product-description"> Baby Wet Wipers with vItamin E & Alovera 72Wipers/pack .</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="1 pack pouch - ₹150">1 pack pouch - ₹150</option>
+                           <option value="2 pack pouch - ₹250">2 pack pouch - ₹250</option>
+                           <option value="5 pack  pouch- ₹600">5 pack pouch - ₹600</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹200</span>
+                            ₹150
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        
+                    </div>
+                </div>
+                <!-- Dodla Milk -->
+                <div class="product-card">
+                    <div class="offer-tag">8% OFF</div>
+                    <img src="https://dodladairy.com/wp-content/uploads/2024/01/Milk-Packets-Mockup-STM-Final.png" alt="Milk-Packet">
+                    <div class="product-info">
+                        <div class="brand">Dodla</div>
+                        <div class="product-name">Milk</div>
+                        <div class="product-description">Dodla's Standardised milk, the perfect choice for tea, coffee.</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="500 ml Packet of 2 - ₹65">500 ml Packet of 2 - ₹65</option>
+                           <option value="1 li Packet of 2 - ₹120">1 li Packet of 2 - ₹120</option>
+                           <option value="2 li Packet of 2 - ₹230">2 li Packet of 2 - ₹230</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹35</span>
+                            ₹30
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+                    </div>
+                </div>
+                <!-- Boost -->
+                <div class="product-card">
+                    <div class="offer-tag">12% OFF</div>
+                    <img src="https://kumaribasket.com/wp-content/uploads/2020/09/Boost-Health-Energy-and-Sports1.jpg" alt="Boost">
+                    <div class="product-info">
+                        <div class="brand">Boost</div>
+                        <div class="product-name">Boost</div>
+                        <div class="product-description">Boost is India's leading malt-based nutrition food drink in a chocolate flavor</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="1/2 kg Pouch - ₹150">1/2 kg Pouch - ₹150</option>
+                           <option value="1 kg Pouch - ₹250">1 kg Pouch - ₹250</option>
+                           <option value="2 kg Pouch - ₹450">2 kg Pouch - ₹450</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹200</span>
+                            ₹150
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        
+                    </div>
+                </div>
+                <!-- Dove -->
+                <div class="product-card">
+                    <div class="offer-tag">8% OFF</div>
+                    <img src="https://www.dove-india.com/cdn/shop/files/18.jpg" alt="Dove">
+                    <div class="product-info">
+                        <div class="brand">Dove</div>
+                        <div class="product-name">Shampoo</div>
+                        <div class="product-description">Dove Men+Care  Shampoo+Conditioner, to care for men's hair needs</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="650 ml Pouch - ₹200">650 ml Pouch - ₹200</option>
+                           <option value="1 li pouch - ₹350">1 li pouch - ₹350</option>
+                           <option value="2 li pouch - ₹550">2 li pouch - ₹550</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹250</span>
+                            ₹200
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+                    </div>
+                </div>
+                <!-- More product cards here -->
+                 <!-- Head & Shoulders -->
+                <div class="product-card">
+                    <div class="offer-tag">10% OFF</div>
+                    <img src="https://m.media-amazon.com/images/I/71FpHXDGZOL.jpg" alt="Head & Shoulders">
+                    <div class="product-info">
+                        <div class="brand">Head & Shoulders</div>
+                        <div class="product-name">Shampoo</div>
+                        <div class="product-description">Head Shoulder Anti Dandruff Shampoo Cool Menthol</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="650 ml Pouch - ₹180">650 ml Pouch - ₹180</option>
+                           <option value="1 li pouch - ₹280">1 li pouch - ₹280</option>
+                           <option value="2 li pouch - ₹500">2 li pouch - ₹500</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹230</span>
+                            ₹180
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+                    </div>
+                </div>
+                 <!-- Dodla Curd -->
+                 <div class="product-card">
+                    <div class="offer-tag">8% OFF</div>
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/DF/GM/YW/85170453/dodla-curd.png" alt="Curd">
+                    <div class="product-info">
+                        <div class="brand">Dodla</div>
+                        <div class="product-name">Curd</div>
+                        <div class="product-description">Dodla curd is hygienically processed and doesn't contain any preservatives.</div>
+        
+                        <label for="weight-select-1">Select weight (kg):</label>
+                        <select id="weight-select-1">
+                           <option value="500 ml Packet of 2 - ₹85">500 ml Packet of 2 - ₹85</option>
+                           <option value="1 li Packet of 2 - ₹160">1 li Packet of 2 - ₹160</option>
+                           <option value="2 li Packet of 2 - ₹250">2 li Packet of 2 - ₹250</option>
+                        </select>
+                        <div class="price">
+                            <span class="mrp-price">₹90</span>
+                            ₹85
+                        </div>
+                        <button class="add-btn" onclick="addToCart(this)">Add</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <button class="nav-btn prev-btn" id="prev-btn2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+              </svg></button>
+            <button class="nav-btn next-btn" id="next-btn2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                  </svg>
+            </button>
+        </div>
+        <div class="Offers-container">
+            <!-- Row 1 with 4 images -->
+            <div class="row row-4">
+                <h2>Top Offers</h2>
+                <div class="image-item">
+                    <a href="page1.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/2b94a9cf-895f-460d-849a-1eee860c974c/hp_dow-topoffersStorefront_m_480_250723_01.jpg?tr=w-1920,q=80" alt="Image 1">
+                </div>
+                <div class="image-item">
+                    <a href="page2.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/2b94a9cf-895f-460d-849a-1eee860c974c/hp_big-packs-topoffersStorefront_m_480_250723_02.jpg?tr=w-1920,q=80" alt="Image 2">
+                </div>
+                <div class="image-item">
+                    <a href="page3.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/2b94a9cf-895f-460d-849a-1eee860c974c/hp_combos-topoffersStorefront_m_480_250723_03.jpg?tr=w-1920,q=80" alt="Image 3">
+                </div>
+                <div class="image-item">
+                    <a href="page4.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/2b94a9cf-895f-460d-849a-1eee860c974c/hp_30-corner-topoffersStorefront_m_480_250723_04.jpg?tr=w-1920,q=80" alt="Image 4">
+                </div>
+            </div>
+        
+            <!-- Row 2 with 4 images -->
+            <div class="row row-4">
+                <h2>Fruits and Vegetables</h2>
+                <div class="image-item">
+                    <a href="page5.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_fresh-vegetables_480_250923.jpg?tr=w-1920,q=80" alt="Image 5">
+                </div>
+                <div class="image-item">
+                    <a href="page6.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_fresh-fruits_480_250923.jpg?tr=w-1920,q=80" alt="Image 6">
+                </div>
+                <div class="image-item">
+                    <a href="page7.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_cuts-&-exotics_480_250923.jpg?tr=w-1920,q=80" alt="Image 7">
+                </div>
+                <div class="image-item">
+                    <a href="page8.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/41a0810e-1fc3-46e4-9d2c-7d9e79e0aa29/hp_f&v_m_herbs-&-seasoning_480_250923.jpg?tr=w-1920,q=80" alt="Image 8">
+                </div>
+            </div>
+        
+            <!-- Row 3 with 6 images -->
+            <div class="row row-6">
+                <h2>Your Daily Staples</h2>
+                <div class="image-item">
+                    <a href="page9.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_atta-flour-staplesStorefront_m_480_250323_01.jpg?tr=w-1920,q=80" alt="Image 9">
+                </div>
+                <div class="image-item">
+                    <a href="page10.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_rice-staplesStorefront_m_480_250323_02.jpg?tr=w-1080,q=80" alt="Image 10">
+                </div>
+                <div class="image-item">
+                    <a href="page11.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_dals-pulses-staplesStorefront_m_480_250323_03.jpg?tr=w-1080,q=80" alt="Image 11">
+                </div>
+                <div class="image-item">
+                    <a href="page12.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_cooking-oils-staplesStorefront_m_480_250323_04.jpg?tr=w-1080,q=80" alt="Image 12">
+                </div>
+                <div class="image-item">
+                    <a href="page13.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_dry-fruits-staplesStorefront_m_480_250323_05.jpg?tr=w-1080,q=80" alt="Image 13">
+                </div>
+                <div class="image-item">
+                    <a href="page14.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/0bb0a6da-8713-48fc-a40d-93cd63ca2025/hp_salt-staplesStorefront_m_480_250323_06.jpg?tr=w-1080,q=80" alt="Image 14">
+                </div>
+            </div>
+        
+            <!-- Row 4 with 6 images -->
+            <div class="row row-6">
+                <h2>Beverages</h2>
+                <div class="image-item">
+                    <a href="page15.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_health-drinks-&-supplements_480_250923.jpg?tr=w-1080,q=80" alt="Image 15">
+                </div>
+                <div class="image-item">
+                    <a href="page16.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_tea-&-coffee_480_250923.jpg?tr=w-1080,q=80" alt="Image 16">
+                </div>
+                <div class="image-item">
+                    <a href="page17.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_flavoured-&-soya-milk_480_250923.jpg?tr=w-1080,q=80" alt="Image 17">
+                </div>
+                <div class="image-item">
+                    <a href="page18.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_juices_480_250923.jpg?tr=w-1080,q=80" alt="Image 18">
+                </div>
+                <div class="image-item">
+                    <a href="page19.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_energy-drinks_480_250923.jpg?tr=w-1080,q=80" alt="Image 19">
+                </div>
+                <div class="image-item">
+                    <a href="page20.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/e4a9856b-dc3f-4927-a5a1-8edfe8d7dc38/hp_bev_m_soft-drinks-&-more_480_250923.jpg?tr=w-1080,q=80" alt="Image 20">
+                </div>
+            </div>
+            <!-- Row 5 with 4 images -->
+            <div class="row row-4">
+                <h2>Snacks Store</h2>
+                <div class="image-item">
+                    <a href="page1.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/09ece9f7-7ac9-4d1e-afbb-f8ac572add38/hp_sbf_m_biscuits-&-namkeens_480_250923.jpg?tr=w-1920,q=80" alt="Image 1">
+                </div>
+                <div class="image-item">
+                    <a href="page2.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/09ece9f7-7ac9-4d1e-afbb-f8ac572add38/hp_sbf_m_breakfast-cereals_480_250923.jpg?tr=w-1920,q=80" alt="Image 2">
+                </div>
+                <div class="image-item">
+                    <a href="page3.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/09ece9f7-7ac9-4d1e-afbb-f8ac572add38/hp_sbf_m_pasta-sauces-&-more_480_270723.jpg?tr=w-1920,q=80" alt="Image 3">
+                </div>
+                <div class="image-item">
+                    <a href="page4.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/09ece9f7-7ac9-4d1e-afbb-f8ac572add38/hp_sbf_m_sweet-cravings_480_250923.jpg?tr=w-1920,q=80" alt="Image 4">
+                </div>
+            </div>
+        
+            <!-- Row 6 with 4 images -->
+            <div class="row row-4">
+                <h2>Cleaning & Household</h2>
+                <div class="image-item">
+                    <a href="page5.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/fefafda6-5ef7-4ed2-8fee-2574720666d7/hp_c&h_m_cleaners_480_250723.jpg?tr=w-1920,q=80" alt="Image 5">
+                </div>
+                <div class="image-item">
+                    <a href="page6.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/fefafda6-5ef7-4ed2-8fee-2574720666d7/hp_c&h_m_detergents-&-fabric-care_480_250723.jpg?tr=w-1920,q=80" alt="Image 6">
+                </div>
+                <div class="image-item">
+                    <a href="page7.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/fefafda6-5ef7-4ed2-8fee-2574720666d7/hp_c&h_m_paper-disposables-&-garbage-bags_480_250723.jpg?tr=w-1920,q=80" alt="Image 7">
+                </div>
+                <div class="image-item">
+                    <a href="page8.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/fefafda6-5ef7-4ed2-8fee-2574720666d7/hp_c&h_m_freshner_480_250723.jpg?tr=w-1920,q=80" alt="Image 8">
+                </div>
+            </div>
+        
+            <!-- Row 7 with 6 images -->
+            <div class="row row-6">
+                <h2>Beauty and Hygiene</h2>
+                <div class="image-item">
+                    <a href="page9.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_-makeup_480_250923.jpg?tr=w-1920,q=80" alt="Image 9">
+                </div>
+                <div class="image-item">
+                    <a href="page10.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_moisturiser_480_250923.jpg?tr=w-1920,q=80" alt="Image 10">
+                </div>
+                <div class="image-item">
+                    <a href="page11.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_perfumes_480_250923.jpg?tr=w-1920,q=80" alt="Image 11">
+                </div>
+                <div class="image-item">
+                    <a href="page12.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_mens-shaving_480_250923.jpg?tr=w-1920,q=80" alt="Image 12">
+                </div>
+                <div class="image-item">
+                    <a href="page13.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_minimum-30-off_480_250923.jpg?tr=w-1920,q=80" alt="Image 13">
+                </div>
+                <div class="image-item">
+                    <a href="page14.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/50aa5fc7-cfa4-4919-b3ba-064fd9aa9441/hp_b&h_m_big-pack-bigger-saving%20bf_480_250923.jpg?tr=w-1920,q=80" alt="Image 14">
+                </div>
+            </div>
+        
+            <!-- Row 8 with 6 images -->
+            <div class="row row-6">
+                <h2>Home and Kitchen</h2>
+                <div class="image-item">
+                    <a href="page15.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GMunder-99_m_250723_01.jpg?tr=w-1080,q=80" alt="Image 15">
+                </div>
+                <div class="image-item">
+                    <a href="page16.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GM100-199_m_250723_02.jpg?tr=w-1080,q=80" alt="Image 16">
+                </div>
+                <div class="image-item">
+                    <a href="page17.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GMStorefront-pressure-cooker_m_250723_03.jpg?tr=w-1080,q=80" alt="Image 17">
+                </div>
+                <div class="image-item">
+                    <a href="page18.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GMStorefront-stationery-store_m_250723_04.jpg?tr=w-1080,q=80" alt="Image 18">
+                </div>
+                <div class="image-item">
+                    <a href="page19.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GM-storage-container_m_250723_05.jpg?tr=w-1080,q=80" alt="Image 19">
+                </div>
+                <div class="image-item">
+                    <a href="page20.html"></a>
+                    <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/1efc132e-4754-4359-a9a3-a9c3ec267d28/hp_GM-cleaning-needs_m_250723_06.jpg?tr=w-1080,q=80" alt="Image 20">
+                </div>
+            </div>
+        </div>
+        <!---main content goes here-->
+      </div>
+    <!--footer-->
+    <footer class="footer" >
+      <div class="container" >
+          <div class="row mb-5">
+              <div class="col-lg-7 mb-4 mb-lg-0">
+                  <h2 class="display-6 fw-bold">Stay Updated with Our Latest Offers</h2>
+                  <p class="lead">Sign up to receive exclusive updates on new products, deals, and special promotions
+                      designed to enhance your shopping experience.</p>
+                  <div class="d-flex flex-column flex-md-row gap-3 newsletter">
+                      <input id="email-address" name="email" type="email" required placeholder="Enter your email"
+                          autocomplete="email" class="form-control border-secondary bg-dark text-light" />
+                      <button type="submit" class="btn btn-warning mt-2 mt-md-0">Subscribe</button>
+                  </div>
+            </div>
+              <div class="col-md-5">
+                  <div class="d-flex flex-column gap-4">
+                      <div class="footer-card d-flex align-items-center">
+                          <i class="fas fa-box-open footer-icon"></i>
+                          <div>
+                              <h5 class="fw-bold">Exclusive Products</h5>
+                              <p>Explore our exclusive range of top-quality products designed to provide exceptional
+                                  value and satisfaction.</p>
+                          </div>
+                      </div>
+                      <div class="footer-card d-flex align-items-center">
+                          <i class="fas fa-tags footer-icon"></i>
+                          <div>
+                              <h5 class="fw-bold">Amazing Deals</h5>
+                              <p>Get access to unbeatable deals and discounts on a wide range of items, ensuring you
+                                  get the best value for your money.</p>
+                          </div>
+                      </div>
+                      <div class="footer-card d-flex align-items-center">
+                          <i class="fas fa-shipping-fast footer-icon"></i>
+                          <div>
+                              <h5 class="fw-bold">Fast Shipping</h5>
+                              <p>Experience fast and reliable shipping options that ensure your products reach you
+                                  quickly and efficiently.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="border-top border-dark pt-4">
+              <div class="row">
+
+
+                  <div class="col-md-3 mb-3">
+                      <h4 class="fw-bold">About Us</h4>
+                      <ul class="list-unstyled">
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">Our Story</a></li>
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">Careers</a></li>
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">Press</a></li>
+                      </ul>
+                  </div>
+
+
+                  <div class="col-md-3 mb-3">
+                      <h4 class="fw-bold">Customer Service</h4>
+                      <ul class="list-unstyled">
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">Returns & Exchanges</a></li>
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">FAQ</a></li>
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">Contact Us</a></li>
+                      </ul>
+                  </div>
+
+
+                  <div class="col-md-3 mb-3">
+                      <h4 class="fw-bold">Resources</h4>
+                      <ul class="list-unstyled">
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">Blog</a></li>
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">Guides</a></li>
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">How-To Videos</a></li>
+                      </ul>
+                  </div>
+
+
+                  <div class="col-md-3 mb-3">
+                      <h4 class="fw-bold">Legal</h4>
+                      <ul class="list-unstyled">
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">Privacy Policy</a></li>
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">Terms of Service</a></li>
+                          <li><a href="#" class="text-light 
+                              text-decoration-none">Cookie Policy</a></li>
+                      </ul>
+                  </div>
+
+
+              </div>
+          </div>
+          <div class="text-center mt-4">
+              <div class="social-icons mb-4">
+                  <a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="text-light"><i class="fab fa-youtube"></i></a>
+              </div>
+
+              <p class="mb-0">&copy; 2024 GrocsMart.
+                  All rights reserved.</p>
+
+
+          </div>
+      </div>
+  </footer>
+    <script src="Home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

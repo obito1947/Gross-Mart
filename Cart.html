@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrocsMart</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/obito1947/Food-delivery-/main/images/grocsmart_logo-removebg-preview.webp" type="image/icon type">
+    <link rel="stylesheet" href="Cart.css">
+</head>
+<body>
+    <div class="cart-container">
+        <h2 class="cart-title">Your Basket</h2>
+        
+        <div class="summary-bar">
+          <div class="summary-left">
+            <p>Subtotal: <span id="subtotal">₹0.00</span></p>
+            <p>platform charges: <span id="platform">₹0.00</span></p>
+            <p>Total: <span id="Total">₹0.00</span></p>
+            <p class="savings">You saved: <span id="savings">₹0.00</span></p>
+          </div>
+          <div class="summary-right">
+            <button class="checkout-btn">Checkout</button>
+          </div>
+        </div>
+        
+        <div class="cart-items">
+           
+      </div>
+    </div>
+ 
+    <!-- Address Container -->
+<div class="address-management" style="display: none;">
+    <!-- Saved Addresses Section -->
+    <div class="saved-addresses">
+        <h2>Select Delivery Address</h2>
+
+        <label class="address-card">
+            <input type="radio" name="address" class="radio-btn">
+            <div class="address-details">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Phone:</strong> +91 9876543210</p>
+                <p><strong>Address:</strong> 123, Main Street, Locality Name</p>
+                <p><strong>City:</strong> New Delhi, <strong>State:</strong> Delhi, <strong>Pincode:</strong> 110001</p>
+            </div>
+        </label>
+
+        <label class="address-card">
+            <input type="radio" name="address" class="radio-btn">
+            <div class="address-details">
+                <p><strong>Name:</strong> Jane Smith</p>
+                <p><strong>Phone:</strong> +91 9876543211</p>
+                <p><strong>Address:</strong> 456, Another Street, Another Locality</p>
+                <p><strong>City:</strong> Mumbai, <strong>State:</strong> Maharashtra, <strong>Pincode:</strong> 400001</p>
+            </div>
+        </label>
+
+        <!-- Add New Address Button -->
+        <div class="add-new-address-text">
+            <p id="show-new-address-form" style="cursor: pointer; color: #2874f0;">+ Add New Address</p>
+        </div><br>
+
+        <div class="form-group">
+            <button type="submit" class="save-btn">Confirm Address</button>
+        </div>
+    </div>
+
+    <!-- Add New Address Form -->
+    <div class="add-new-address" id="new-address-form" style="display: none;">
+        <form>
+            <h1>Add Address</h1>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Mobile Number</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="altPhone">Alternate Phone (Optional)</label>
+                <input type="text" id="altPhone" name="altPhone">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Door No. / Building No.</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="locality">Locality</label>
+                <input type="text" id="locality" name="locality" required>
+            </div>
+
+            <div class="form-group">
+                <label for="landmark">Landmark (Optional)</label>
+                <input type="text" id="landmark" name="landmark">
+            </div>
+
+            <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" name="pincode" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+           
+            <div class="form-group">
+                <button type="submit" class="save-btn" id="confirm-address-btn">Confirm Address</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+    <!-- Payment Form (Initially Hidden) -->
+<div class="payment-container" id="payment-container" style="display: none;">
+    <h2>Select payment method</h2>
+    <p>Preferred method with secure transactions.</p>
+    <div class="payment-methods">
+        <label class="payment-option">
+            <input type="radio" name="payment" value="debit card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Visa_debit_2014_logo.svg/640px-Visa_debit_2014_logo.svg.png" alt="Visa">
+            Pay with Debit Card
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="upi">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/UPI_logo.svg/640px-UPI_logo.svg.png" alt="Mastercard">
+            Pay with UPI
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="paypal" checked>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+            Pay with PayPal
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="applepay">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay">
+            Pay with Apple Pay
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="cod">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Pass_Cash_Logo.png/640px-Pass_Cash_Logo.png" alt="Stripe">
+            Pay with Cash On Delivery
+        </label>
+    </div>
+
+    <button class="continue-btn" onclick="placeOrder() ">Place Order</button>
+    <button class="back-btn">Go Back</button>
+</div>
+
+<!-- Confirmation form initially hidden -->
+<div class="confirmation-container" id="confirmation-container" style="display: none;">
+    <div class="confirmation-content">
+        <div class="confirmation-icon">&#10004;</div> <!-- Green checkmark -->
+        <h2>Thanks for Ordering!</h2>
+        <p>Your Order ID: <span id="order-id">#123456</span></p>
+        <p>Estimated Delivery: <span id="delivery-date">24th August 2024</span></p>
+        <p>Delivery Time: <span id="delivery-time">12:30 PM</span></p>
+        <button id="go-home-btn" >Go to Home</button>
+    </div>
+</div>
+      <script src="Cart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    </body>  
+        
+</html>
